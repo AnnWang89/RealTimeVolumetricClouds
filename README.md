@@ -112,12 +112,12 @@
 		* ![](https://i.imgur.com/pzT6GPK.png)
 	* Cirrocumulus clouds 
 		* ![](https://i.imgur.com/wCxaAdF.png)
-    * http://killzone.dl.playstation.net/killzone/horizonzerodawn/presentations/Siggraph15_Schneider_Real-Time_Volumetric_Cloudscapes_of_Horizon_Zero_Dawn.pdf (這個也好)
-    * https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8893256&fileOId=8893258 (參考用)
+    * http://killzone.dl.playstation.net/killzone/horizonzerodawn/presentations/Siggraph15_Schneider_Real-Time_Volumetric_Cloudscapes_of_Horizon_Zero_Dawn.pdf 
+    * https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8893256&fileOId=8893258
     * https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/s2016-pbs-frostbite-sky-clouds-new.pdf (p.30~end)
 * GitHub:
     * https://github.com/SebLague/Clouds 
-    * https://github.com/adrianpolimeni/RealTimeVolumetricClouds (可從這個開始)
-* 神奇的東西:
+    * https://github.com/adrianpolimeni/RealTimeVolumetricClouds 
+* Others:
     * https://thebookofshaders.com/
     * http://magnuswrenninge.com/wp-content/uploads/2010/03/Wrenninge-OzTheGreatAndVolumetric.pdf
