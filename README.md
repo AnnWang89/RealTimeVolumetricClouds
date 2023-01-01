@@ -93,25 +93,25 @@
     * https://www.youtube.com/watch?v=4QOcCGI6xOU&list=PLFt_AvWsXl0ehjAfLFsp1PGaatzAwo0uK&index=10
 * Method:
     * **http://www.diva-portal.org/smash/get/diva2:1223894/FULLTEXT01.pdf (P.17 18 雲的種類)**
-    	* Cumulus cloud ![](https://i.imgur.com/KNZxxJz.png)
+    	* Cumulus cloud 
+    		* ![](https://i.imgur.com/KNZxxJz.png)
 
-		* Cumulonimbus cloud 
-			* ![](https://i.imgur.com/sUvz4ce.png)
+	* Cumulonimbus cloud 
+		* ![](https://i.imgur.com/sUvz4ce.png)
 
-		* Stratus clouds 
-			* ![](https://i.imgur.com/R17ZF8l.png)
+	* Stratus clouds 
+		* ![](https://i.imgur.com/R17ZF8l.png)
 
-		* Stratocumulus clouds
-			* ![](https://i.imgur.com/5QLpkyl.png)
+	* Stratocumulus clouds
+		* ![](https://i.imgur.com/5QLpkyl.png)
 
-		* Altocumulus clouds
-			* ![](https://i.imgur.com/jnzdQ6p.png)
+	* Altocumulus clouds
+		* ![](https://i.imgur.com/jnzdQ6p.png)
 
-		* Cirrus clouds 
-			* ![](https://i.imgur.com/pzT6GPK.png)
-
-		* Cirrocumulus clouds 
-			* ![](https://i.imgur.com/wCxaAdF.png)
+	* Cirrus clouds 
+		* ![](https://i.imgur.com/pzT6GPK.png)
+	* Cirrocumulus clouds 
+		* ![](https://i.imgur.com/wCxaAdF.png)
     * http://killzone.dl.playstation.net/killzone/horizonzerodawn/presentations/Siggraph15_Schneider_Real-Time_Volumetric_Cloudscapes_of_Horizon_Zero_Dawn.pdf (這個也好)
     * https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8893256&fileOId=8893258 (參考用)
     * https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/s2016-pbs-frostbite-sky-clouds-new.pdf (p.30~end)
