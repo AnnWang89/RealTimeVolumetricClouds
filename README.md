@@ -5,14 +5,6 @@
 * https://docs.google.com/document/d/1xoDwF73i6dEF6PIKQZIHhjMCxtX2-ozRIjy6tjBirhg/edit?usp=sharing
 
 ## 實作
-* 很厚的雲
-    * ![](https://i.imgur.com/Tp67zGN.png)
-    * ![](https://i.imgur.com/D0tZVG6.png)
-* Cirrocumulus clouds
-    * ![](https://i.imgur.com/IJhE5G3.png)
-    * ![](https://i.imgur.com/stWdyxA.png)
-    
-
 
 ### 說明
 * 簡介
