@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 [ExecuteInEditMode, ImageEffectAllowedInSceneView]
+
 public class Clouds : MonoBehaviour
 {
     public Shader shader;  
@@ -15,8 +16,24 @@ public class Clouds : MonoBehaviour
     public Text displayText;
     private float fpsDisplayUpdate = 1;
 
+    private bool choose_buttom = false;
+    // Button
+    public Button btnStart1;
+
+    /* Coefficient */
+    private float buttom_densityMultiplier;
+
     [HideInInspector]
     public Material material;
+
+    
+
+    void Start()
+    {
+        btnStart1.onClick.AddListener(ClickStart1);
+        buttom_densityMultiplier = Settings.densityMultiplier;
+
+    }
     
     public void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
@@ -32,10 +49,21 @@ public class Clouds : MonoBehaviour
         Vector3 size = cloudBox.transform.localScale;
         Vector3 position = cloudBox.transform.position;
 
+        if(!choose_buttom)
+        {
+            material.SetFloat("densityMultiplier", Settings.densityMultiplier);
+        }
+        else
+        {
+            material.SetFloat("densityMultiplier", buttom_densityMultiplier);
+            
+        }
+
+
         material.SetTexture("NoiseTex", noise.shapeTexture);
         material.SetTexture("DetailNoiseTex", noise.detailTexture);
         material.SetFloat("scale", Settings.cloudScale);
-        material.SetFloat("densityMultiplier", Settings.densityMultiplier);
+        // material.SetFloat("densityMultiplier", Settings.densityMultiplier);
         material.SetFloat("densityOffset", Settings.densityOffset);
         material.SetFloat("volumeOffset", Settings.volumeOffset);
         material.SetFloat("detailNoiseScale", Settings.detailScale);
@@ -77,6 +105,14 @@ public class Clouds : MonoBehaviour
             fpsDisplayUpdate = Time.time + 0.5f;
             displayText.text = "FPS: " + avgFrameRate.ToString();
         }
+    }
+
+    private void ClickStart1()
+    {
+        Debug.Log("CLICK Start!");
+        choose_buttom = true;
+        buttom_densityMultiplier = 50;
+
     }
 
     private CloudSettings Settings {

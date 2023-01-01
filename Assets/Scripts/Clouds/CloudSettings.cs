@@ -23,4 +23,7 @@
         public float scatterMultiplier;
         public Vector3 cloudSpeed;
         public Vector3 detailSpeed;
-    }
+
+        
+
+}
