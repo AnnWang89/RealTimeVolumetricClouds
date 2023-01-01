@@ -5,10 +5,33 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+///* Coefficient */
+//bool choose_buttom_out = false;
+//int choose_A_out;
+//int choose_B_out;
+//int choose_C_out;
 
 [ExecuteInEditMode]
 public class Noise : MonoBehaviour
 {
+    public Button btnCumulus;
+    public Button btnCumulonimbus;
+    public Button btnStratus;
+    public Button btnStratocumulus;
+    public Button btnAltocumulus;
+    public Button btnCirrus;
+    public Button btnCirrocumulus;
+
+
+    ///* Coefficient */
+    private int choose_A;
+    private int choose_B;
+    private int choose_C;
+
+    private bool choose_buttom = false;
+
     [HideInInspector]
     public enum NoiseType { Shape, Detail }
     [HideInInspector]
@@ -52,12 +75,92 @@ public class Noise : MonoBehaviour
         }
         updateNoise = true;
         activeSettings.Set(settingsList[0]);
+
+        /*Button*/
+        btnCumulus.onClick.AddListener(Click_btnCumulus);
+        btnCumulonimbus.onClick.AddListener(Click_btnCumulonimbus);
+        btnStratus.onClick.AddListener(Click_btnStratus);
+        btnStratocumulus.onClick.AddListener(Click_btnStratocumulus);
+        btnAltocumulus.onClick.AddListener(Click_btnAltocumulus);
+        btnCirrus.onClick.AddListener(Click_btnCirrocumulus);
+        btnCirrocumulus.onClick.AddListener(Click_btnCirrocumulus);
+    }
+
+    /*Button Control*/
+    private void Click_btnCumulus()
+    {
+        Debug.Log("CLICK btnCumulus IN!");
+        choose_buttom = true;
+        choose_A = 3;
+        choose_B = 40;
+        choose_C = 60;
+        
+    }
+    private void Click_btnCumulonimbus()
+    {
+        Debug.Log("CLICK btnCumulonimbus IN!");
+        choose_buttom = true;
+        choose_A = 3;
+        choose_B = 40;
+        choose_C = 60;
+
+    }
+    private void Click_btnStratus()
+    {
+        Debug.Log("CLICK btnStratus IN!");
+        choose_buttom = true;
+        choose_A = 3;
+        choose_B = 40;
+        choose_C = 60;
+
+    }
+    private void Click_btnStratocumulus()
+    {
+        Debug.Log("CLICK btnStratocumulus IN!");
+        choose_buttom = true;
+        choose_A = 3;
+        choose_B = 40;
+        choose_C = 60;
+
+    }
+    private void Click_btnAltocumulus()
+    {
+        Debug.Log("CLICK btnAltocumulus IN!");
+        choose_buttom = true;
+        choose_A = 3;
+        choose_B = 40;
+        choose_C = 60;
+
+    }
+    private void Click_btnCirrus()
+    {
+        Debug.Log("CLICK btnCirrus IN!");
+        choose_buttom = true;
+        choose_A = 3;
+        choose_B = 40;
+        choose_C = 60;
+
+    }
+    private void Click_btnCirrocumulus()
+    {
+        Debug.Log("CLICK btnCirrocumulus IN!");
+        choose_buttom = true;
+        choose_A = 40;
+        choose_B = 43;
+        choose_C = 45;
+
     }
 
     public void UpdateNoise(NoiseSettings settings = null)
     {
         settings = settings == null ? activeSettings : settings;
 
+        if(choose_buttom)
+        {
+            settings.frequencyA = choose_A;
+            settings.frequencyB = choose_B;
+            settings.frequencyC = choose_C;
+        }
         if (updateNoise && noiseCompute && settings != null)
         {
             RenderTexture texture = GetTexture(settings.type);
@@ -110,13 +213,39 @@ public class Noise : MonoBehaviour
     void UpdateProperties(NoiseSettings settings)
     {
         System.Random rand = new System.Random(settings.seed);
-        GenerateRandomPoints(rand, settings.frequencyA, "pointsA");
-        GenerateRandomPoints(rand, settings.frequencyB, "pointsB");
-        GenerateRandomPoints(rand, settings.frequencyC, "pointsC");
+        
 
-        noiseCompute.SetInt("frequencyA", settings.frequencyA);
-        noiseCompute.SetInt("frequencyB", settings.frequencyB);
-        noiseCompute.SetInt("frequencyC", settings.frequencyC);
+        if (!choose_buttom)
+        {
+            GenerateRandomPoints(rand, settings.frequencyA, "pointsA");
+            GenerateRandomPoints(rand, settings.frequencyB, "pointsB");
+            GenerateRandomPoints(rand, settings.frequencyC, "pointsC");
+
+            noiseCompute.SetInt("frequencyA", settings.frequencyA);
+            noiseCompute.SetInt("frequencyB", settings.frequencyB);
+            noiseCompute.SetInt("frequencyC", settings.frequencyC);
+        }
+        else
+        {
+            settings.frequencyA = choose_A;
+            settings.frequencyB = choose_B;
+            settings.frequencyC = choose_C;
+            //activeSettings.Set(settings);
+            //activeSettings = settings;
+
+            GenerateRandomPoints(rand, choose_A, "pointsA");
+            GenerateRandomPoints(rand, choose_B, "pointsB");
+            GenerateRandomPoints(rand, choose_C, "pointsC");
+
+            noiseCompute.SetInt("frequencyA", choose_A);
+            noiseCompute.SetInt("frequencyB", choose_B);
+            noiseCompute.SetInt("frequencyC", choose_C);
+
+            
+            
+        }
+        
+
     }
 
     void GenerateRandomPoints(System.Random rand, int numCells, string buffer)
@@ -225,6 +354,7 @@ public class NoiseSettingsCollection
 [Serializable]
 public class NoiseSettings
 {
+
     public int type;
     public int channel;
     public int seed;
@@ -233,10 +363,13 @@ public class NoiseSettings
     public int frequencyB;
     public int frequencyC;
 
+    //public Buttom test;
+
     public NoiseSettings Clone()
     {
         return JsonUtility.FromJson<NoiseSettings>(JsonUtility.ToJson(this));
     }
+
     public void Set(NoiseSettings settings)
     {
         type = settings.type;
@@ -246,5 +379,10 @@ public class NoiseSettings
         frequencyA = settings.frequencyA;
         frequencyB = settings.frequencyB;
         frequencyC = settings.frequencyC;
+        //frequencyA = 5;
+        //frequencyB = 40;
+        //frequencyC = 60;
+
+
     }
 }
