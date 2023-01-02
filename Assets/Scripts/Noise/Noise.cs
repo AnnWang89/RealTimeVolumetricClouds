@@ -92,8 +92,8 @@ public class Noise : MonoBehaviour
         Debug.Log("CLICK btnCumulus IN!");
         choose_buttom = true;
         choose_A = 3;
-        choose_B = 40;
-        choose_C = 60;
+        choose_B = 1;
+        choose_C = 2;
         
     }
     private void Click_btnCumulonimbus()
@@ -101,8 +101,8 @@ public class Noise : MonoBehaviour
         Debug.Log("CLICK btnCumulonimbus IN!");
         choose_buttom = true;
         choose_A = 3;
-        choose_B = 40;
-        choose_C = 60;
+        choose_B = 3;
+        choose_C = 11;
 
     }
     private void Click_btnStratus()
@@ -110,8 +110,8 @@ public class Noise : MonoBehaviour
         Debug.Log("CLICK btnStratus IN!");
         choose_buttom = true;
         choose_A = 3;
-        choose_B = 40;
-        choose_C = 60;
+        choose_B = 8;
+        choose_C = 13;
 
     }
     private void Click_btnStratocumulus()
@@ -145,9 +145,9 @@ public class Noise : MonoBehaviour
     {
         Debug.Log("CLICK btnCirrocumulus IN!");
         choose_buttom = true;
-        choose_A = 40;
-        choose_B = 43;
-        choose_C = 45;
+        choose_A = 25;
+        choose_B = 40;
+        choose_C = 47;
 
     }
 
