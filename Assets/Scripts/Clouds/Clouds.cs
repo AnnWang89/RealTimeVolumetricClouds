@@ -59,7 +59,7 @@ public class Clouds : MonoBehaviour
         btnStratus.onClick.AddListener(Click_btnStratus);
         btnStratocumulus.onClick.AddListener(Click_btnStratocumulus);
         btnAltocumulus.onClick.AddListener(Click_btnAltocumulus);
-        btnCirrus.onClick.AddListener(Click_btnCirrocumulus);
+        btnCirrus.onClick.AddListener(Click_btnCirrus);
         btnCirrocumulus.onClick.AddListener(Click_btnCirrocumulus);
 
 
@@ -312,24 +312,24 @@ public class Clouds : MonoBehaviour
     {
         Debug.Log("CLICK btnCirrus IN!");
         choose_buttom = true;
-        
-        buttom_scale = Settings.cloudScale;
-        buttom_densityMultiplier = Settings.densityMultiplier;
-        buttom_densityOffset = Settings.densityOffset;
-        buttom_volumeOffset = Settings.volumeOffset;
-        buttom_detailScale = Settings.detailScale;
-        buttom_detailMultiplier = Settings.detailMultiplier;
-        buttom_noiseWeights = Settings.noiseWeights;
-        buttom_detailNoiseWeights = Settings.detailNoiseWeights;
-        buttom_heightMapFactor = Settings.heightMapFactor;
 
-        buttom_marchSteps = Settings.marchSteps;
-        buttom_rayOffset = Settings.rayOffset;
+        buttom_scale = 1.06f;
+        buttom_densityMultiplier = 13.86f;
+        buttom_densityOffset = 1.36f;
+        buttom_volumeOffset = 4.11f;
+        buttom_detailScale = 2.42f;
+        buttom_detailMultiplier = 2f;
+        buttom_noiseWeights = new Vector4(1.4f, 1.63f, -1.11f, 1.1f);
+        buttom_detailNoiseWeights = new Vector3(0.81f, 1.54f, 8.65f);
+        buttom_heightMapFactor = 0.965f;
 
-        buttom_brightness = Settings.brightness;
-        buttom_transmitThreshold = Settings.transmitThreshold;
-        buttom_inScatterMultiplier = Settings.inScatterMultiplier;
-        buttom_outScatterMultiplier = Settings.outScatterMultiplier;
+        buttom_marchSteps = 14;
+        buttom_rayOffset = 29f;
+
+        buttom_brightness = (float)0.75;
+        buttom_transmitThreshold = (float)0.3;
+        buttom_inScatterMultiplier = (float)0.49;
+        buttom_outScatterMultiplier = (float)0.6;
 
     }
     private void Click_btnCirrocumulus()
