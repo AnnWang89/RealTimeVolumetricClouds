@@ -109,9 +109,9 @@ public class Noise : MonoBehaviour
     {
         Debug.Log("CLICK btnStratus IN!");
         choose_buttom = true;
-        choose_A = 3;
-        choose_B = 8;
-        choose_C = 13;
+        choose_A = 5;
+        choose_B = 1;
+        choose_C = 30;
 
     }
     private void Click_btnStratocumulus()
@@ -127,9 +127,9 @@ public class Noise : MonoBehaviour
     {
         Debug.Log("CLICK btnAltocumulus IN!");
         choose_buttom = true;
-        choose_A = 3;
-        choose_B = 40;
-        choose_C = 60;
+        choose_A = 12;
+        choose_B = 13;
+        choose_C = 11;
 
     }
     private void Click_btnCirrus()
