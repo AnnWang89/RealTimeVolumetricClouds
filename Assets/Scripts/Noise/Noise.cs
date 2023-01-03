@@ -29,6 +29,7 @@ public class Noise : MonoBehaviour
     private int choose_A;
     private int choose_B;
     private int choose_C;
+    private string load_name = "";
 
     private bool choose_buttom = false;
 
@@ -91,63 +92,139 @@ public class Noise : MonoBehaviour
     {
         Debug.Log("CLICK btnCumulus IN!");
         choose_buttom = true;
-        choose_A = 3;
-        choose_B = 1;
-        choose_C = 2;
-        
+        //choose_A = 3;
+        //choose_B = 1;
+        //choose_C = 2;
+        load_name = "Cumulus";
+
+        settingsList = LoadSettings();
+        foreach (var settings in settingsList)
+        {
+            if (settings != null)
+                ForceUpdate(settings);
+            else
+                ForceUpdate(new NoiseSettings());
+        }
+        activeSettings.Set(settingsList[0]);
     }
     private void Click_btnCumulonimbus()
     {
         Debug.Log("CLICK btnCumulonimbus IN!");
         choose_buttom = true;
-        choose_A = 3;
-        choose_B = 3;
-        choose_C = 11;
+        //choose_A = 3;
+        //choose_B = 3;
+        //choose_C = 11;
+        load_name = "Cumulonimbus";
 
+        settingsList = LoadSettings();
+        foreach (var settings in settingsList)
+        {
+            if (settings != null)
+                ForceUpdate(settings);
+            else
+                ForceUpdate(new NoiseSettings());
+        }
+        activeSettings.Set(settingsList[0]);
     }
     private void Click_btnStratus()
     {
         Debug.Log("CLICK btnStratus IN!");
         choose_buttom = true;
-        choose_A = 5;
-        choose_B = 1;
-        choose_C = 30;
+        //choose_A = 5;
+        //choose_B = 1;
+        //choose_C = 30;
+        load_name = "Stratus";
 
+        settingsList = LoadSettings();
+        foreach (var settings in settingsList)
+        {
+            if (settings != null)
+                ForceUpdate(settings);
+            else
+                ForceUpdate(new NoiseSettings());
+        }
+        activeSettings.Set(settingsList[0]);
     }
     private void Click_btnStratocumulus()
     {
         Debug.Log("CLICK btnStratocumulus IN!");
         choose_buttom = true;
-        choose_A = 3;
-        choose_B = 40;
-        choose_C = 60;
+        //choose_A = 3;
+        //choose_B = 40;
+        //choose_C = 60;
 
+        load_name = "Stratocumulus";
+
+        settingsList = LoadSettings();
+        foreach (var settings in settingsList)
+        {
+            if (settings != null)
+                ForceUpdate(settings);
+            else
+                ForceUpdate(new NoiseSettings());
+        }
+        activeSettings.Set(settingsList[0]);
     }
     private void Click_btnAltocumulus()
     {
         Debug.Log("CLICK btnAltocumulus IN!");
         choose_buttom = true;
-        choose_A = 12;
-        choose_B = 13;
-        choose_C = 11;
+        //choose_A = 12;
+        //choose_B = 13;
+        //choose_C = 11;
 
+        load_name = "Altocumulus";
+
+        settingsList = LoadSettings();
+        foreach (var settings in settingsList)
+        {
+            if (settings != null)
+                ForceUpdate(settings);
+            else
+                ForceUpdate(new NoiseSettings());
+        }
+        activeSettings.Set(settingsList[0]);
     }
     private void Click_btnCirrus()
     {
         Debug.Log("CLICK btnCirrus IN!");
         choose_buttom = true;
-        choose_A = 3;
-        choose_B = 40;
-        choose_C = 60;
+        //choose_A = 3;
+        //choose_B = 40;
+        //choose_C = 60;
+        load_name = "Cirrus";
+
+
+        settingsList = LoadSettings();
+        foreach (var settings in settingsList)
+        {
+            if (settings != null)
+                ForceUpdate(settings);
+            else
+                ForceUpdate(new NoiseSettings());
+        }
+        activeSettings.Set(settingsList[0]);
 
     }
     private void Click_btnCirrocumulus()
     {
         Debug.Log("CLICK btnCirrocumulus IN!");
         choose_buttom = true;
-        choose_A = 25;
-        choose_B = 40;
-        choose_C = 47;
+        //choose_A = 25;
+        //choose_B = 40;
+        //choose_C = 47;
+        load_name = "Cirrocumulus";
+        
+        
+        settingsList = LoadSettings();
+        foreach (var settings in settingsList)
+        {
+            if (settings != null)
+                ForceUpdate(settings);
+            else
+                ForceUpdate(new NoiseSettings());
+        }
+        activeSettings.Set(settingsList[0]);
 
     }
 
@@ -155,12 +232,12 @@ public class Noise : MonoBehaviour
     {
         settings = settings == null ? activeSettings : settings;
 
-        if(choose_buttom)
-        {
-            settings.frequencyA = choose_A;
-            settings.frequencyB = choose_B;
-            settings.frequencyC = choose_C;
-        }
+        //if(choose_buttom)
+        //{
+        //    settings.frequencyA = choose_A;
+        //    settings.frequencyB = choose_B;
+        //    settings.frequencyC = choose_C;
+        //}
         if (updateNoise && noiseCompute && settings != null)
         {
             RenderTexture texture = GetTexture(settings.type);
@@ -213,38 +290,44 @@ public class Noise : MonoBehaviour
     void UpdateProperties(NoiseSettings settings)
     {
         System.Random rand = new System.Random(settings.seed);
-        
+        GenerateRandomPoints(rand, settings.frequencyA, "pointsA");
+        GenerateRandomPoints(rand, settings.frequencyB, "pointsB");
+        GenerateRandomPoints(rand, settings.frequencyC, "pointsC");
 
-        if (!choose_buttom)
-        {
-            GenerateRandomPoints(rand, settings.frequencyA, "pointsA");
-            GenerateRandomPoints(rand, settings.frequencyB, "pointsB");
-            GenerateRandomPoints(rand, settings.frequencyC, "pointsC");
+        noiseCompute.SetInt("frequencyA", settings.frequencyA);
+        noiseCompute.SetInt("frequencyB", settings.frequencyB);
+        noiseCompute.SetInt("frequencyC", settings.frequencyC);
 
-            noiseCompute.SetInt("frequencyA", settings.frequencyA);
-            noiseCompute.SetInt("frequencyB", settings.frequencyB);
-            noiseCompute.SetInt("frequencyC", settings.frequencyC);
-        }
-        else
-        {
-            settings.frequencyA = choose_A;
-            settings.frequencyB = choose_B;
-            settings.frequencyC = choose_C;
-            //activeSettings.Set(settings);
-            //activeSettings = settings;
+        //if (!choose_buttom)
+        //{
+        //    GenerateRandomPoints(rand, settings.frequencyA, "pointsA");
+        //    GenerateRandomPoints(rand, settings.frequencyB, "pointsB");
+        //    GenerateRandomPoints(rand, settings.frequencyC, "pointsC");
 
-            GenerateRandomPoints(rand, choose_A, "pointsA");
-            GenerateRandomPoints(rand, choose_B, "pointsB");
-            GenerateRandomPoints(rand, choose_C, "pointsC");
+        //    noiseCompute.SetInt("frequencyA", settings.frequencyA);
+        //    noiseCompute.SetInt("frequencyB", settings.frequencyB);
+        //    noiseCompute.SetInt("frequencyC", settings.frequencyC);
+        //}
+        //else
+        //{
+        //    settings.frequencyA = choose_A;
+        //    settings.frequencyB = choose_B;
+        //    settings.frequencyC = choose_C;
+        //    activeSettings.Set(settings);
+        //    activeSettings = settings;
 
-            noiseCompute.SetInt("frequencyA", choose_A);
-            noiseCompute.SetInt("frequencyB", choose_B);
-            noiseCompute.SetInt("frequencyC", choose_C);
+        //    GenerateRandomPoints(rand, choose_A, "pointsA");
+        //    GenerateRandomPoints(rand, choose_B, "pointsB");
+        //    GenerateRandomPoints(rand, choose_C, "pointsC");
 
-            
-            
-        }
-        
+        //    noiseCompute.SetInt("frequencyA", choose_A);
+        //    noiseCompute.SetInt("frequencyB", choose_B);
+        //    noiseCompute.SetInt("frequencyC", choose_C);
+
+
+
+        //}
+
 
     }
 
@@ -328,7 +411,16 @@ public class Noise : MonoBehaviour
 
     public NoiseSettings[] LoadSettings()
     {
-        string path = Application.dataPath + "/Settings/" + SceneManager.GetActiveScene().name + ".json";
+        string path;
+        if (!choose_buttom)
+        {
+            path = Application.dataPath + "/Settings/" + SceneManager.GetActiveScene().name + ".json";
+        }
+        else
+        {
+            path = Application.dataPath + "/Settings/" + load_name + ".json";
+        }
+            
         NoiseSettings[] output;
         try
         {
