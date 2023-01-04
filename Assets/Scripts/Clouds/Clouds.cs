@@ -197,23 +197,23 @@ public class Clouds : MonoBehaviour
         Debug.Log("CLICK btnCumulus IN!");
         choose_buttom = true;
 
-        buttom_scale = (float)1.5;
-        buttom_densityMultiplier = (float)21;
-        buttom_densityOffset = (float)4.16;
-        buttom_volumeOffset = (float)3.82;
-        buttom_detailScale = (float)0.93;
-        buttom_detailMultiplier = (float)2.1;
-        buttom_noiseWeights = new Vector4(9.05f, 1.4f, 0.88f, 0.12f);
-        buttom_detailNoiseWeights = new Vector3(0.67f, 0.3f, 0.15f);
-        buttom_heightMapFactor = (float)0.97;
+        buttom_scale = 1.06f;
+        buttom_densityMultiplier = 13.86f;
+        buttom_densityOffset = 1.36f;
+        buttom_volumeOffset = 4.11f;
+        buttom_detailScale = 2.42f;
+        buttom_detailMultiplier = 2f;
+        buttom_noiseWeights = new Vector4(1.4f, 1.63f, -1.11f, 1.1f);
+        buttom_detailNoiseWeights = new Vector3(0.81f, 1.54f, 8.65f);
+        buttom_heightMapFactor = 0.965f;
 
-        buttom_marchSteps = 18;
-        buttom_rayOffset = (float)30.2;
+        buttom_marchSteps = 14;
+        buttom_rayOffset = 29f;
 
-        buttom_brightness = (float)1.0;
-        buttom_transmitThreshold = (float)0.52;
-        buttom_inScatterMultiplier = (float)0.32;
-        buttom_outScatterMultiplier = (float)0.52;
+        buttom_brightness = (float)0.75;
+        buttom_transmitThreshold = (float)0.3;
+        buttom_inScatterMultiplier = (float)0.49;
+        buttom_outScatterMultiplier = (float)0.6;
 
     }
     private void Click_btnCumulonimbus()
@@ -243,6 +243,30 @@ public class Clouds : MonoBehaviour
     {
         Debug.Log("CLICK btnStratus IN!");
         choose_buttom = true;
+
+        buttom_scale = (float)1;
+        buttom_densityMultiplier = (float)2.75;
+        buttom_densityOffset = (float)1.25;
+        buttom_volumeOffset = (float)4.16;
+        buttom_detailScale = (float)0.57;
+        buttom_detailMultiplier = (float)2.17;
+        buttom_noiseWeights = new Vector4(10.8f, 10.24f, -10.6f, 40.1f);
+        buttom_detailNoiseWeights = new Vector3(10.81f, 1.54f, 8.65f);
+        buttom_heightMapFactor = (float)0.96;
+
+        buttom_marchSteps = 1;
+        buttom_rayOffset = (float)41.5;
+
+        buttom_brightness = (float)0.98;
+        buttom_transmitThreshold = (float)0.45;
+        buttom_inScatterMultiplier = Settings.inScatterMultiplier;
+        buttom_outScatterMultiplier = Settings.outScatterMultiplier;
+
+    }
+    private void Click_btnStratocumulus()
+    {
+        Debug.Log("CLICK btnStratocumulus IN!");
+        choose_buttom = true;
         buttom_scale = 1.06f;
         buttom_densityMultiplier = 13.86f;
         buttom_densityOffset = 1.36f;
@@ -262,66 +286,27 @@ public class Clouds : MonoBehaviour
         buttom_outScatterMultiplier = (float)0.6;
 
     }
-    private void Click_btnStratocumulus()
-    {
-        Debug.Log("CLICK btnStratocumulus IN!");
-        choose_buttom = true;
-
-
-        buttom_scale = (float)1;
-        buttom_densityMultiplier = (float)2.75;
-        buttom_densityOffset = (float)1.25;
-        buttom_volumeOffset = (float)4.16;
-        buttom_detailScale = (float)0.57;
-        buttom_detailMultiplier = (float)2.17;
-        buttom_noiseWeights = new Vector4(10.8f, 10.24f, -10.6f, 40.1f);
-        buttom_detailNoiseWeights = new Vector3(10.81f, 1.54f, 8.65f);
-        buttom_heightMapFactor = (float)0.96;
-
-        buttom_marchSteps = 1;
-        buttom_rayOffset = (float)41.5;
-
-        buttom_brightness = (float)0.98;
-        buttom_transmitThreshold = (float)0.45;
-        buttom_inScatterMultiplier = Settings.inScatterMultiplier;
-        buttom_outScatterMultiplier = Settings.outScatterMultiplier;
-    }
     private void Click_btnAltocumulus()
     {
         Debug.Log("CLICK btnAltocumulus IN!");
         choose_buttom = true;
-        buttom_scale = Settings.cloudScale;
-        buttom_densityMultiplier = Settings.densityMultiplier;
-        buttom_densityOffset = Settings.densityOffset;
-        buttom_volumeOffset = Settings.volumeOffset;
-        buttom_detailScale = Settings.detailScale;
-        buttom_detailMultiplier = Settings.detailMultiplier;
-        buttom_noiseWeights = Settings.noiseWeights;
-        buttom_detailNoiseWeights = Settings.detailNoiseWeights;
-        buttom_heightMapFactor = Settings.heightMapFactor;
+        buttom_scale = 1f;
+        buttom_densityMultiplier = 10;
+        buttom_densityOffset = 3.66f;
+        buttom_volumeOffset = 3.98f;
+        buttom_detailScale = 1f;
+        buttom_detailMultiplier = 2.34f;
+        buttom_noiseWeights = new Vector4(9.05f, 1.4f, 0.88f, 1.69f);
+        buttom_detailNoiseWeights = new Vector3(0.99f, 0.21f, 0.15f);
+        buttom_heightMapFactor = 0.968f;
 
-        buttom_marchSteps = Settings.marchSteps;
-        buttom_rayOffset = Settings.rayOffset;
+        buttom_marchSteps = 23;
+        buttom_rayOffset = 50f;
 
-        buttom_brightness = Settings.brightness;
-        buttom_transmitThreshold = Settings.transmitThreshold;
-        buttom_inScatterMultiplier = Settings.inScatterMultiplier;
-        buttom_outScatterMultiplier = Settings.outScatterMultiplier;
-        Debug.Log(Settings.cloudScale);
-        Debug.Log(Settings.densityMultiplier);
-        Debug.Log(Settings.densityOffset);
-        Debug.Log(Settings.volumeOffset);
-        Debug.Log(Settings.detailScale);
-        Debug.Log(Settings.detailMultiplier);
-        Debug.Log(Settings.noiseWeights);
-        Debug.Log(Settings.detailNoiseWeights);
-        Debug.Log(Settings.heightMapFactor);
-        Debug.Log(Settings.marchSteps);
-        Debug.Log(Settings.rayOffset);
-        Debug.Log(Settings.brightness);
-        Debug.Log(Settings.transmitThreshold);
-        Debug.Log(Settings.inScatterMultiplier);
-        Debug.Log(Settings.outScatterMultiplier);
+        buttom_brightness = (float)0.816;
+        buttom_transmitThreshold = (float)0.642;
+        buttom_inScatterMultiplier = (float)0.296;
+        buttom_outScatterMultiplier = (float)0.4;
 
     }
     private void Click_btnCirrus()
