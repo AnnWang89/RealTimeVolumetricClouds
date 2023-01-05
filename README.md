@@ -1,8 +1,6 @@
 # Clouds☁️: How to make volumetric cloud realistic and evolutional!
 ###### tags: `Computer Graphics`
 ## Proposal
-* https://docs.google.com/presentation/d/1XdHw1atAELexWOSky_GNzWubzy7DHR1FumLBm8hRyXg/edit#slide=id.g19b628d4f30_2_50
-* https://docs.google.com/document/d/1xoDwF73i6dEF6PIKQZIHhjMCxtX2-ozRIjy6tjBirhg/edit?usp=sharing
 
 ## 實作
 
